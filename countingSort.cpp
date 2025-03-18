@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-
+// falta todo
 void countSort(int array[], int size) {
     int output[size];  
     int max = array[0]; 

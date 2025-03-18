@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// le falta datos por archivo
 int linearSearch(int array[], int n, int x) {
     for (int i = 0; i < n; i++) {
         if (array[i] == x)

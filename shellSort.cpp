@@ -5,7 +5,8 @@ void shellSort(int arr[], int n) {
    
     int gap = n / 2;
 
-    
+// Le falta todo esto    
+
     while (gap > 0) {
         for (int i = gap; i < n; i++) {
             int temp = arr[i]; 

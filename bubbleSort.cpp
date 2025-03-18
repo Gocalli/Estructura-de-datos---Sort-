@@ -6,7 +6,7 @@ using namespace std;
 using namespace std::chrono;
 
 
-
+//falta opcion por archivo
 
 
 int bubbleSort(int array[], int size, bool debugMode) {

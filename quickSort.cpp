@@ -5,6 +5,7 @@
 #include <iomanip> 
 #include <ctime>   
 
+// le falta por archivo
 using namespace std;
 
 int partition(int arr[], int low, int high) {
