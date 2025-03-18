@@ -1,0 +1,2 @@
+Este es un ejercicio propuesto en la universidad tecnologica de pereira donde los estudiantes investigaron sobre los algoritmos sort, 
+compartieron los codigos y fueron recopilados en el siguiente programa
