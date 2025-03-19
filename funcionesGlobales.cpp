@@ -9,7 +9,6 @@
 #include "shellSort.h"
 #include "linearSort.h"
 #include "binarySort.h"
-
 #include "countingSort.h"
 #include "radixSort.h"
 
@@ -77,7 +76,7 @@ void menu(){
 	      callShell();
 		   break;
 	   case 11:
-	  	  linearcall();
+	  	  linearCall();
 		   break;
 	   case 12:
 	   	  callBinary();

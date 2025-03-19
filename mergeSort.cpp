@@ -54,14 +54,18 @@ void merge_sort() {
         
         int temp[] = {20, 12, 10, 15, 2};
         size = sizeof(temp) / sizeof(temp[0]);
-        for (int i = 0; i < size; i++) data[i] = temp[i];
+        for (int i = 0; i < size; i++) {
+            data[i] = temp[i];
+        }
 
     } else if (mode == 2) {
         
         cout << "Ingrese el tamaño del array: ";
         cin >> size;
         cout << "Ingrese los elementos:\n";
-        for (int i = 0; i < size; i++) cin >> data[i];
+        for (int i = 0; i < size; i++) {
+            cin >> data[i];
+        }
 
     } else if (mode == 3) {
        
@@ -71,7 +75,9 @@ void merge_sort() {
             return;
         }
         inputFile >> size;
-        for (int i = 0; i < size; i++) inputFile >> data[i];
+        for (int i = 0; i < size; i++){ 
+            inputFile >> data[i];
+        }
         inputFile.close();
     } else {
         cout << "Opción inválida.\n";

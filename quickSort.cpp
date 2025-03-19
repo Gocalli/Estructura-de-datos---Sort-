@@ -1,35 +1,30 @@
-#include "funcionesGlobales.h"
 #include "quickSort.h"
+#include "funcionesGlobales.h"
+#
 
-#include <iostream>
-#include <iomanip> 
-#include <ctime>   
-
-// le falta por archivo
 using namespace std;
 
 int partition(int arr[], int low, int high) {
     int pivot = arr[high]; 
-    int i = low - 1; 
-
+    int i = low - 1;
+    
     for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) { 
-            i++; 
+        if (arr[j] < pivot) {
+            i++;
             swap(arr[i], arr[j]);
         }
     }
-    swap(arr[i + 1], arr[high]); 
+    swap(arr[i + 1], arr[high]);
     return i + 1;
 }
 
 void quicksort(int arr[], int low, int high) {
     if (low < high) {
-        int pi = partition(arr, low, high); 
+        int pi = partition(arr, low, high);
         quicksort(arr, low, pi - 1);
         quicksort(arr, pi + 1, high);
     }
 }
-
 
 void quicksortIterativo(int arr[], int low, int high) {
     int stack[high - low + 1];
@@ -55,39 +50,48 @@ void quicksortIterativo(int arr[], int low, int high) {
     }
 }
 
-
-
-
-
 int callQuick() {
     int opcion;
     
     while (true) {
-        cout << "\n--- MENU ---\n";
+        cout << "\n--- MENÚ ---\n";
         cout << "1. Ordenar con Quicksort Recursivo\n";
         cout << "2. Ordenar con Quicksort Iterativo\n";
-        cout << "3. Salir\n";
-        cout << "Seleccione una opci—n: ";
+        cout << "3. Ordenar desde archivo array.txt\n";
+        cout << "4. Salir\n";
+        cout << "Seleccione una opción: ";
         cin >> opcion;
         
-        if (opcion == 3) {
+        if (opcion == 4) {
             cout << "Saliendo del programa...\n";
             break;
         }
         
         int n;
-        cout << "Ingrese el tama–o del arreglo (m‡x 1000): ";
-        cin >> n;
+        int arr[1000];
         
-        if (n <= 0 || n > 1000) {
-            cout << "Tama–o inv‡lido. Intente nuevamente.\n";
-            continue;
-        }
-        
-        int arr[n];
-        cout << "Ingrese los elementos del arreglo: ";
-        for (int i = 0; i < n; i++) {
-            cin >> arr[i];
+        if (opcion == 3) {
+            ifstream inputFile("array.txt");
+            if (!inputFile) {
+                cout << "Error al abrir el archivo.\n";
+                continue;
+            }
+            inputFile >> n;
+            for (int i = 0; i < n; i++) inputFile >> arr[i];
+            inputFile.close();
+        } else {
+            cout << "Ingrese el tamaño del arreglo (máx 1000): ";
+            cin >> n;
+            
+            if (n <= 0 || n > 1000) {
+                cout << "Tamaño inválido. Intente nuevamente.\n";
+                continue;
+            }
+            
+            cout << "Ingrese los elementos del arreglo: ";
+            for (int i = 0; i < n; i++) {
+                cin >> arr[i];
+            }
         }
         
         clock_t start, end;
@@ -102,12 +106,12 @@ int callQuick() {
             end = clock();
             cout << "Array ordenado (Iterativo): ";
         } else {
-            cout << "Opci—n inv‡lida. Intente de nuevo.\n";
+            cout << "Opción inválida. Intente de nuevo.\n";
             continue;
         }
         
         printArray(arr, n);
-        cout << "Tiempo de ejecuci—n: " << scientific << double(end - start) / CLOCKS_PER_SEC << " segundos\n";
+        cout << "Tiempo de ejecución: " << scientific << double(end - start) / CLOCKS_PER_SEC << " segundos\n";
     }
     
     return 0;
