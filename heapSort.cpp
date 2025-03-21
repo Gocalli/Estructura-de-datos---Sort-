@@ -74,8 +74,7 @@ int callHeap() {
         return 1;
     }
     
-    cout << "--- El Array original fue: \n";
-    printArray(arr, size);
+    
     
     auto start = high_resolution_clock::now();
     heapSort(arr, size);

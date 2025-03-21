@@ -1,5 +1,5 @@
 #include "funcionesGlobales.h"
-#include "bubblesort.h"
+#include "bubbleSort.h"
 #include "selectionSort.h"
 #include "insertionSort.h"
 #include "mergeSort.h"

@@ -13,7 +13,7 @@ void countSort(int array[], int size) {
             max = array[i];
     }
 
-    int conteo[max + 1] = {0}; 
+    int *conteo = new int[max + 1]();
 
     for (int i = 0; i < size; i++) {
         conteo[array[i]]++;
@@ -68,8 +68,7 @@ int callCounting() {
         return 1;
     }
 
-    cout << "--- El Array original fue: \n";
-    printArray(array, size);
+    
 
     struct timeb inicio, fin;
     ftime(&inicio);  

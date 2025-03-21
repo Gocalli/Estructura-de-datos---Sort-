@@ -102,7 +102,8 @@ int callBucket() {
 
     if (opcion == 1) {
         size = 7;
-        arr = new int[size]{42, 32, 33, 52, 37, 47, 51};
+        arr = new int[size];
+        arr[0] = 42; arr[1] = 32; arr[2] = 33; arr[3] = 52; arr[4] = 37; arr[5] = 47; arr[6] = 51;
     } else if (opcion == 2) {
         cout << "Ingrese el tamaño del array: ";
         cin >> size;

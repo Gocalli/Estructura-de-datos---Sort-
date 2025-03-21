@@ -4,8 +4,6 @@ using namespace std;
 using namespace std::chrono;
 
 
-
-
 int bubbleSort(int array[], int size, bool debugMode = false) {
     int totalSteps = 0;
 

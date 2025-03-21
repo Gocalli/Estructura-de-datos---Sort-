@@ -25,8 +25,6 @@ void selectionSort(int array[], int size){
    }
 
     swap(&array[min_idx], &array[step]);
-    cout << "--- Antes del swap" << step + 1 << ": ";
-    printArray(array, size);
   }
 }
 
